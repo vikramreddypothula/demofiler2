@@ -1,0 +1,42 @@
+<!-- 
+<div class="container"
+fxLayout
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="0">
+<div class="item item-1" fxFlex="15%">Item 1</div>
+<div class="item item-2" fxFlex="20%" fxFlexOrder="3">Item 2</div>
+<div class="item item-3" fxFlex>Item 3</div>
+</div> -->
+
+<form [formGroup]="advanceFilterForm">
+
+
+  <div class="maindiv">
+    <div class="subdiv1">
+      
+      <p-multiSelect [options]="Courses" formControlName="courses"></p-multiSelect>
+    </div>
+    <div class="subdiv2">
+    
+      <p-listbox [options]="Operators" formControlName="operators"></p-listbox>
+    </div>
+
+    <div class="subdiv3">
+
+      <input type="text" class="textfield" formControlName="txtvalue">
+      <div style="height: 20px; clear: both;">&nbsp;</div>
+      <input type="button" class="button" value="submit" (click)="Submit()">
+    </div>
+    <div  class="subdiv3" style="width: 10%; float: left;"></div>
+
+
+    <h4 [class.valid] ="this.advanceFilterForm.valid" [class.error]="this.advanceFilterForm.invalid">{{lable}}</h4>
+
+
+  </div>
+</form>
+
+
+<router-outlet></router-outlet>
